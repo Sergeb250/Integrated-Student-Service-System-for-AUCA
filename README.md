@@ -157,6 +157,33 @@ A unified web-based digital platform that connects all university service depart
 └─────────────────────────────────────────────────────────────┘
 ```
 
+###  SERVICES 
+
+- registration office forms. 
+    
+-suspension form, and come back form  and pay to finances 
+
+- modification form
+
+
+-apply student cards
+ 
+- to whom
+
+- clearance from aucas ,dean, Library,finance notification on dashboard 
+
+-offical transcript
+ 
+- attendance certificate and payments finance direct approvals 
+
+-internaships letter recommendations 
+
+- group extended and prerequisites 
+
+-  make up forms in exam office
+
+
+
 ### STORAGE AND COMPUTING 
 
 What “computing per student” means here
