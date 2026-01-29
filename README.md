@@ -157,6 +157,124 @@ A unified web-based digital platform that connects all university service depart
 └─────────────────────────────────────────────────────────────┘
 ```
 
+### STORAGE AND COMPUTING 
+
+What “computing per student” means here
+
+For document uploads, the key resources are:
+
+Storage (GB) – where files live
+
+Bandwidth (Mbps) – how fast uploads/downloads happen
+
+Server capacity – number of uploads processed at the same time (CPU/RAM matters, but storage + bandwidth are the biggest drivers)
+
+So we estimate storage per student per year, then scale to the whole university.
+
+2) A practical minimum upload policy (recommended)
+
+If AUCA wants to keep storage manageable, set simple limits:
+
+Max file size: 10 MB per file
+
+Max files per request: 5 files
+
+Max files per student per semester: 30 files (minimum policy)
+
+Allowed formats: PDF, JPG/PNG, DOCX
+
+Auto-compress images (JPG/PNG) and generate thumbnails
+
+This ensures students can submit everything needed without abusing storage.
+
+3) Storage per student: minimum vs normal vs heavy
+Assumed typical file sizes
+
+Photo / scanned ID: 0.5 MB
+
+Receipt / bank slip scan: 0.2–0.5 MB
+
+Letters/forms (PDF): 0.1–0.3 MB
+
+Medical/appeal docs (PDF scan): 0.2–0.7 MB
+
+Thesis/project: 5–20 MB (depends if it includes images)
+
+A) Minimum usage (most controlled)
+
+Assume per student per year:
+
+ID + profile photo: 2 files × 0.5 MB = 1 MB
+
+Payment receipts/slips: 12 files × 0.3 MB = 3.6 MB
+
+Forms/letters: 10 files × 0.2 MB = 2 MB
+
+Misc (extra requests): 5 files × 0.3 MB = 1.5 MB
+
+Minimum total/year/student ≈ 8–10 MB
+
+✅ Meaning: With strict limits, a student can upload about 25–30 documents/year and take ~10 MB/year.
+
+B) Normal usage (realistic for a working university)
+
+Assume per student per year:
+
+Receipts/slips: 20 files × 0.35 MB = 7 MB
+
+Forms/letters/requests: 15 files × 0.25 MB = 3.75 MB
+
+Extra evidence uploads: 10 files × 0.5 MB = 5 MB
+
+ID/photo: 1 MB
+
+Normal total/year/student ≈ 16–20 MB
+
+✅ Meaning: Student uploads about 40–50 documents/year and uses ~20 MB/year.
+
+C) Heavy usage (a minority of students)
+
+For students with many appeals, late payments, medical documents, etc.
+
+Assume:
+
+80 docs/year × 0.5 MB average = 40 MB
+
+thesis/project (final year only): 10 MB
+
+Heavy total/year/student ≈ 40–60 MB
+(only for a smaller percentage)
+
+4) Convert “per student” to AUCA storage totals (example: 5,000 students)
+Option 1: Minimum policy storage
+
+10 MB/student/year × 5,000 = 50,000 MB/year ≈ 50 GB/year
+
+Over 5 years (uploads only): ~250 GB
+Then add:
+
+System-generated PDFs (clearance, exam cards): +10–30 GB/year
+
+Database + logs: + few GB/year
+
+Backups/replication: usually 2× to 3× the raw data
+
+ Safe planning:
+
+Raw documents after 5 years: ~250 GB
+
+With redundancy/backups: 500–750 GB
+>> Recommend 1 TB to be comfortable.
+
+Option 2: Normal policy storage (more realistic)
+
+20 MB/student/year × 5,000 = 100 GB/year
+
+Over 5 years (uploads only): ~500 GB
+With backups/replication (x3): ~1.5 TB
+
+>> Recommend 2 TB total storage capacity (active + backups), or 1 TB active + 2–4 TB backup/archive depending on design.
+
 ### Architecture Principles
 
 1. **Microservices-Based** - Each department is an independent service
